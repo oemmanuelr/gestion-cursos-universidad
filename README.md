@@ -30,8 +30,6 @@ spring.datasource.url=jdbc:mysql://localhost:3306/gestion_universidad
 spring.datasource.username=root
 spring.datasource.password=tu_contraseña
 spring.jpa.hibernate.ddl-auto=update
-Ejecución del proyecto
-Clonar el repositorio:
 ```
 ## Ejecución del proyecto
 
