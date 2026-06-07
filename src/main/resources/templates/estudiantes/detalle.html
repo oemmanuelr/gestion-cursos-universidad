@@ -4,34 +4,60 @@
 <body>
 <div th:replace="layout/navbar :: nav"></div>
 
-<div class="container mt-4">
-    <div class="card">
-        <div class="card-header">
-            <h3 th:text="${titulo}">Detalle</h3>
-        </div>
-        <div class="card-body">
-            <div class="row">
-                <div class="col-md-6">
-                    <p><strong>Carnet:</strong> <span th:text="${estudiante.carnet}"></span></p>
-                    <p><strong>Nombre Completo:</strong> <span th:text="${estudiante.nombreCompleto}"></span></p>
-                    <p><strong>Email:</strong> <span th:text="${estudiante.email}"></span></p>
-                    <p><strong>Teléfono:</strong> <span th:text="${estudiante.telefono}"></span></p>
-                    <p><strong>Estado:</strong>
-                        <span th:if="${estudiante.activo}" class="badge bg-success">Activo</span>
-                        <span th:unless="${estudiante.activo}" class="badge bg-danger">Inactivo</span>
-                    </p>
+<div class="main-container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="form-modern">
+                <h3 class="mb-4" th:text="${titulo}">Detalle del Estudiante</h3>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <strong>Carnet:</strong>
+                        <p th:text="${estudiante.carnet}">-</p>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <strong>Email:</strong>
+                        <p th:text="${estudiante.email}">-</p>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <p><strong>Cursos inscritos:</strong></p>
-                    <ul>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <strong>Nombres:</strong>
+                        <p th:text="${estudiante.nombres}">-</p>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <strong>Apellidos:</strong>
+                        <p th:text="${estudiante.apellidos}">-</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <strong>Teléfono:</strong>
+                        <p th:text="${estudiante.telefono}">-</p>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <strong>Estado:</strong>
+                        <p>
+                            <span th:if="${estudiante.activo}" class="badge-active">Activo</span>
+                            <span th:unless="${estudiante.activo}" class="badge-inactive">Inactivo</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <strong>Cursos inscritos:</strong>
+                    <ul class="mt-2">
                         <li th:each="curso : ${estudiante.cursos}" th:text="${curso.nombre + ' - ' + curso.codigo}"></li>
                         <li th:if="${estudiante.cursos.isEmpty()}">No está inscrito en ningún curso</li>
                     </ul>
                 </div>
-            </div>
-            <div class="text-center mt-3">
-                <a href="/estudiantes" class="btn btn-secondary">Volver</a>
-                <a th:href="@{/estudiantes/editar/{id}(id=${estudiante.id})}" class="btn btn-warning">Editar</a>
+
+                <div class="text-end">
+                    <a href="/estudiantes" class="btn btn-secondary btn-modern">Volver</a>
+                    <a th:href="@{/estudiantes/editar/{id}(id=${estudiante.id})}" class="btn btn-primary-modern btn-modern">Editar</a>
+                </div>
             </div>
         </div>
     </div>

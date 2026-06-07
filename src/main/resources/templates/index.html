@@ -1,76 +1,45 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema Universitario</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
+<head th:replace="layout/navbar :: head"></head>
 <body>
+<div th:replace="layout/navbar :: nav"></div>
 
-<!-- Barra de navegación -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<div class="main-container">
+    <div class="hero-section">
+        <h1>Bienvenido al Sistema Universitario</h1>
+        <p>Gestión centralizada de carreras, estudiantes y cursos</p>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="stat-card">
+                <div class="stat-number" th:text="${totalCarreras}">0</div>
+                <div class="stat-label">Carreras Registradas</div>
+                <a href="/carreras" class="btn btn-primary-modern btn-modern mt-3">Ver Carreras</a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="stat-card">
+                <div class="stat-number" th:text="${totalEstudiantes}">0</div>
+                <div class="stat-label">Estudiantes Registrados</div>
+                <a href="/estudiantes" class="btn btn-primary-modern btn-modern mt-3">Ver Estudiantes</a>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="stat-card">
+                <div class="stat-number" th:text="${totalCursos}">0</div>
+                <div class="stat-label">Cursos Registrados</div>
+                <a href="/cursos" class="btn btn-primary-modern btn-modern mt-3">Ver Cursos</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer-modern">
     <div class="container">
-        <a class="navbar-brand" href="/">🏫 Sistema Universitario</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="/carreras">📚 Carreras</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/estudiantes">👨‍🎓 Estudiantes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/cursos">📖 Cursos</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<!-- Contenido principal -->
-<div class="container mt-4">
-    <div class="row">
-        <div class="col-md-12 text-center">
-            <h1 class="display-4">🎓 Bienvenido al Sistema Universitario</h1>
-            <p class="lead">Gestión de Carreras, Estudiantes y Cursos</p>
-            <hr>
-        </div>
-    </div>
-
-    <div class="row mt-5">
-        <div class="col-md-4">
-            <div class="card text-center">
-                <div class="card-body">
-                    <h2 class="display-4" th:text="${totalCarreras}">0</h2>
-                    <p class="card-text">Carreras Registradas</p>
-                    <a href="/carreras" class="btn btn-primary">Ver Carreras</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card text-center">
-                <div class="card-body">
-                    <h2 class="display-4" th:text="${totalEstudiantes}">0</h2>
-                    <p class="card-text">Estudiantes Registrados</p>
-                    <a href="/estudiantes" class="btn btn-success">Ver Estudiantes</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <div class="card text-center">
-                <div class="card-body">
-                    <h2 class="display-4" th:text="${totalCursos}">0</h2>
-                    <p class="card-text">Cursos Registrados</p>
-                    <a href="/cursos" class="btn btn-info">Ver Cursos</a>
-                </div>
-            </div>
-        </div>
+        <p>Sistema Universitario &copy; 2026 - Todos los derechos reservados</p>
     </div>
 </div>
 

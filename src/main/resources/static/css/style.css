@@ -1,0 +1,255 @@
+/* Fuente moderna */
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e9edf2 100%);
+    min-height: 100vh;
+    color: #1a2a3a;
+}
+
+/* Navbar moderno */
+.navbar-custom {
+    background: linear-gradient(90deg, #1a2a6c 0%, #2a3a7c 100%);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 1rem 0;
+}
+
+.navbar-custom .navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: -0.5px;
+    color: white;
+}
+
+.navbar-custom .navbar-brand:hover {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar-custom .nav-link {
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+    transition: all 0.2s ease;
+    margin: 0 0.25rem;
+    border-radius: 8px;
+}
+
+.navbar-custom .nav-link:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Tarjetas modernas */
+.card-modern {
+    background: white;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+}
+
+.card-modern:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Botones */
+.btn-modern {
+    border-radius: 10px;
+    font-weight: 500;
+    padding: 0.6rem 1.5rem;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.btn-primary-modern {
+    background: linear-gradient(90deg, #1a2a6c, #2a3a7c);
+    color: white;
+}
+
+.btn-primary-modern:hover {
+    background: linear-gradient(90deg, #2a3a7c, #3a4a8c);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(26, 42, 108, 0.3);
+}
+
+.btn-danger-modern {
+    background: linear-gradient(90deg, #dc3545, #c82333);
+    color: white;
+}
+
+.btn-danger-modern:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(220, 53, 69, 0.3);
+}
+
+/* Tablas modernas */
+.table-modern {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.table-modern thead th {
+    background: linear-gradient(90deg, #1a2a6c, #2a3a7c);
+    color: white;
+    font-weight: 600;
+    border: none;
+    padding: 1rem;
+}
+
+.table-modern tbody tr {
+    transition: background 0.2s ease;
+}
+
+.table-modern tbody tr:hover {
+    background: #f8f9fa;
+}
+
+.table-modern td {
+    padding: 1rem;
+    vertical-align: middle;
+    border-color: #eef2f6;
+}
+
+/* Badges (estado activo/inactivo) */
+.badge-active {
+    background: #28a745;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.badge-inactive {
+    background: #6c757d;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* Formularios */
+.form-modern {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.form-modern .form-label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #1a2a3a;
+}
+
+.form-modern .form-control, .form-modern .form-select {
+    border-radius: 10px;
+    border: 1px solid #e0e5ec;
+    padding: 0.75rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.form-modern .form-control:focus, .form-modern .form-select:focus {
+    border-color: #1a2a6c;
+    box-shadow: 0 0 0 3px rgba(26, 42, 108, 0.1);
+    outline: none;
+}
+
+/* Hero section (página principal) */
+.hero-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #1a2a6c 0%, #2a3a7c 100%);
+    border-radius: 30px;
+    color: white;
+    margin-bottom: 3rem;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+}
+
+/* Estadísticas */
+.stat-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1a2a6c;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+/* Alertas */
+.alert-modern {
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 1rem 1.25rem;
+}
+
+/* Contenedor principal */
+.main-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .main-container {
+        padding: 1rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+}
+
+/* Footer */
+.footer-modern {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+    color: #6c757d;
+    font-size: 0.875rem;
+    border-top: 1px solid #e0e5ec;
+}

@@ -4,74 +4,71 @@
 <body>
 <div th:replace="layout/navbar :: nav"></div>
 
-<div class="container mt-4">
+<div class="main-container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">
-                    <h3 th:text="${titulo}">Formulario de Estudiante</h3>
-                </div>
-                <div class="card-body">
-                    <div th:if="${error}" class="alert alert-danger" th:text="${error}"></div>
+            <div class="form-modern">
+                <h3 class="mb-4" th:text="${titulo}">Formulario</h3>
 
-                    <form th:action="${accion == 'Crear' ? '/estudiantes/guardar' : '/estudiantes/actualizar/' + estudiante.id}"
-                          th:object="${estudiante}" method="post">
+                <div th:if="${error}" class="alert alert-modern alert-danger" th:text="${error}"></div>
 
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label>Carnet (formato UFG):</label>
-                                <input type="text" class="form-control" th:field="*{carnet}" required>
-                                <small class="text-muted">Ejemplo: SA24010123</small>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label>Email:</label>
-                                <input type="email" class="form-control" th:field="*{email}">
-                            </div>
+                <form th:action="${accion == 'Crear' ? '/estudiantes/guardar' : '/estudiantes/actualizar/' + estudiante.id}"
+                      th:object="${estudiante}" method="post">
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Carnet (formato UFG)</label>
+                            <input type="text" class="form-control" th:field="*{carnet}" required>
+                            <small class="text-muted">Ejemplo: SA24010123</small>
                         </div>
-
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label>Nombres:</label>
-                                <input type="text" class="form-control" th:field="*{nombres}" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label>Apellidos:</label>
-                                <input type="text" class="form-control" th:field="*{apellidos}" required>
-                            </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" th:field="*{email}">
                         </div>
+                    </div>
 
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label>Teléfono:</label>
-                                <input type="tel" class="form-control" th:field="*{telefono}">
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label>Estado:</label>
-                                <select class="form-control" th:field="*{activo}">
-                                    <option th:value="true">Activo</option>
-                                    <option th:value="false">Inactivo</option>
-                                </select>
-                            </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Nombres</label>
+                            <input type="text" class="form-control" th:field="*{nombres}" required>
                         </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Apellidos</label>
+                            <input type="text" class="form-control" th:field="*{apellidos}" required>
+                        </div>
+                    </div>
 
-                        <div class="mb-3">
-                            <label>Cursos asignados:</label>
-                            <select class="form-control" name="cursosIds" multiple size="5">
-                                <option th:each="curso : ${cursos}"
-                                        th:value="${curso.id}"
-                                        th:text="${curso.nombre + ' (' + curso.codigo + ')'}"
-                                        th:selected="${cursosSeleccionados != null && cursosSeleccionados.contains(curso)}">
-                                </option>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Teléfono</label>
+                            <input type="tel" class="form-control" th:field="*{telefono}">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Estado</label>
+                            <select class="form-select" th:field="*{activo}">
+                                <option th:value="true">Activo</option>
+                                <option th:value="false">Inactivo</option>
                             </select>
-                            <small class="text-muted">Presiona Ctrl para seleccionar múltiples cursos</small>
                         </div>
+                    </div>
 
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary" th:text="${accion}">Guardar</button>
-                            <a href="/estudiantes" class="btn btn-secondary">Cancelar</a>
-                        </div>
-                    </form>
-                </div>
+                    <div class="mb-4">
+                        <label class="form-label">Cursos asignados</label>
+                        <select class="form-select" name="cursosIds" multiple size="5">
+                            <option th:each="curso : ${cursos}"
+                                    th:value="${curso.id}"
+                                    th:text="${curso.nombre + ' (' + curso.codigo + ')'}"
+                                    th:selected="${cursosSeleccionados != null && cursosSeleccionados.contains(curso)}">
+                            </option>
+                        </select>
+                        <small class="text-muted">Presiona Ctrl para seleccionar múltiples cursos</small>
+                    </div>
+
+                    <div class="text-end">
+                        <a href="/estudiantes" class="btn btn-secondary btn-modern">Cancelar</a>
+                        <button type="submit" class="btn btn-primary-modern btn-modern" th:text="${accion}">Guardar</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
